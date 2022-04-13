@@ -1,0 +1,29 @@
+<div class="calculator">
+  <div class="total">{{ total }}</div>
+  <div class="top-buttons">
+    <button (click)="clear()">AC</button>
+
+    <button (click)="percent()">%</button>
+  </div>
+  <div class="operators">
+    <button (click)="add()">+</button>
+    <button (click)="substract()">-</button>
+    <button (click)="divide()">/</button>
+    <button (click)="multiplicate()">*</button>
+  </div>
+  <div class="numbers">
+    <button (click)="getValue(9)">9</button>
+    <button (click)="getValue(8)">8</button>
+    <button (click)="getValue(7)">7</button>
+    <button (click)="getValue(6)">6</button>
+    <button (click)="getValue(5)">5</button>
+    <button (click)="getValue(4)">4</button>
+    <button (click)="getValue(3)">3</button>
+    <button (click)="getValue(2)">2</button>
+    <button (click)="getValue(1)">1</button>
+  </div>
+  <div class="numbers-bottom">
+    <button (click)="getValue(0)">0</button>
+    <button (click)="equal()">=</button>
+  </div>
+</div>
