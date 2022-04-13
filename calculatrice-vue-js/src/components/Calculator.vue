@@ -4,8 +4,8 @@
 		<div class="total">{{ total || 0 }}</div>
 		<div class="top-buttons">
 			<button v-on:click="clear()">AC</button>
+			<button v-on:click="reverse()">+/-</button>
 			<button v-on:click="percent()">%</button>
-			<button v-on:click="equal()">=</button>
 		</div>
 		<div class="operators">
 			<button v-on:click="add()">+</button>
@@ -23,7 +23,11 @@
 			<button v-on:click="getValue(3)" data-id="3">3</button>
 			<button v-on:click="getValue(2)" data-id="2">2</button>
 			<button v-on:click="getValue(1)" data-id="1">1</button>
+		</div>
+		<div class="numbers-bottom">
 			<button v-on:click="getValue(0)">0</button>
+			<button v-on:click="getValue('.')">.</button>
+			<button v-on:click="equal()">=</button>
 		</div>
 	</div>
 </template>
@@ -77,7 +81,17 @@
 			clear() {
 				this.total = '';
 				this.previous = null;
-			}
+			},
+			reverse() {
+				if (this.total.charAt(0) == '-') {
+					this.total = this.total.slice(1);
+				} else {
+					this.total = '-' + this.total
+				}
+			},
+			dot() {
+
+			},
 		}
 	}
 </script>
@@ -119,7 +133,11 @@ button {
 	width: 33.333%;
 }
 
-.numbers button:last-child {
-	width: 100%;
+.numbers-bottom button {
+	width: 33.333%;
+}
+
+.numbers-bottom button:last-child {
+	background-color: lightsalmon;
 }
 </style>
