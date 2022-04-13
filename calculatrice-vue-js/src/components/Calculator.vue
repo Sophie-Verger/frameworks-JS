@@ -89,9 +89,6 @@
 					this.total = '-' + this.total
 				}
 			},
-			dot() {
-
-			},
 		}
 	}
 </script>
